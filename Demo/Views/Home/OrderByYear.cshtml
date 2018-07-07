@@ -1,0 +1,39 @@
+﻿
+@model List<Employee>
+@{
+    ViewData["Title"] = "OrderByYear";
+}
+
+<h2>OrderByYear</h2>
+
+<h2> All Employee</h2>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Full Name</th>
+            <th>City</th>
+            <th>Age</th>
+            <td>Admin</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@item.Name</th>
+                <th>@item.FullName</th>
+                <th>@item.City</th>
+                <th>@item.Age</th>
+                <th>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary" role="button">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" role="button">Delete</a>
+                </th>
+            </tr>
+        }
+
+
+    </tbody>
+
+</table>

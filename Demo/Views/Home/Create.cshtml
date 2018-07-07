@@ -1,0 +1,20 @@
+﻿@model Employee
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<form method="post">
+
+    <div class="form-group">
+        <input asp-for="Name" />
+        <input asp-for="FullName" />
+        <input asp-for="City" />
+        <input asp-for="Age" />
+        <button type="submit" class="btn btn-default"> Create</button>
+    </div>
+
+</form>
+

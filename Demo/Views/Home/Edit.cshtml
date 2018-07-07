@@ -1,0 +1,18 @@
+﻿@model Employee
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit @Model.Name</h2>
+
+<form method="post">
+
+    <div class="form-group">
+        <input asp-for="Name" />
+        <input asp-for="FullName" />
+        <input asp-for="City" />
+        <input asp-for="Age" />
+        <button type="submit" class="btn btn-success"> Edit</button>
+    </div>
+
+</form>

@@ -1,0 +1,47 @@
+﻿@using Demo.Models.EmployeeModels
+@using Microsoft.AspNetCore.Authorization;
+@using Microsoft.AspNetCore.Authorization.Infrastructure;
+@using Microsoft.AspNetCore.Identity;
+
+@model List<Employee>
+
+
+<br />
+
+<hr />
+
+<a asp-controller="Home" asp-action="Create" class="btn btn-default" role="button">Create</a>
+
+<a asp-controller="Home" asp-action="OrderByYear" class="btn btn-default" role="button">Order</a>
+
+<h2> All Employee</h2>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Full Name</th>
+            <th>City</th>
+            <th>Age</th>
+            <td>Admin</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@item.Name</th>
+                <th>@item.FullName</th>
+                <th>@item.City</th>
+                <th>@item.Age</th>
+                <th>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary" role="button">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" role="button">Delete</a>
+                </th>
+            </tr>
+        }
+
+
+    </tbody>
+
+</table>
